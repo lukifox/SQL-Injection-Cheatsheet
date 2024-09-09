@@ -33,3 +33,6 @@
 ## MSSQL Injection Cheatsheet
 - Error- or UNION-based SQLi
 - Privilege Escalation
+
+
+If you have problem contact me -> (edit soon)
