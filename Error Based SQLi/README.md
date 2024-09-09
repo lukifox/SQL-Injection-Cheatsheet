@@ -4,7 +4,7 @@ This is probably the easiest vulnerability along the SQL Injection attack. An at
 
 ## Detecting the vulnerability
 
-<code>http://site.com/index.php?id=1</code>
+<code>https://site.com/index.php?id=1</code>
 
 Website load successfully.
 
