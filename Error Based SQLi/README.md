@@ -4,7 +4,7 @@ This is probably the easiest vulnerability along the SQL Injection attack. An at
 
 ## Detecting the vulnerability
 
-<code>https://site.com/index.php?id=1</code>
+<code>http://site.com/index.php?id=1</code>
 
 Website load successfully.
 
@@ -89,5 +89,6 @@ If no WAF Warning is shown and website loads up, we confirm the vulnerability, e
 Now that we performed an SQL syntax error to the website, we can begin fuzzing and finding how many columns do we have by using ORDER BY
 
 <code>https://site.com/index.php?id=1' order by 1-- -</code> 
+
 This query musn't shows up error, since there is no lower number than 1
 
